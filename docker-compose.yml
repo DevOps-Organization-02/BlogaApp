@@ -1,14 +1,21 @@
 version: "3"
 services:
-  react-app:
-    image: react-app
+  frontend:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    container_name: frontend
     stdin_open: true
     ports: 
       - "3000:3000"
     networks:
       - mern-app
-  api-server:
-    image: api-server
+      
+   backend:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    container_name: backend
     ports:
       - "5000:5000"
     networks:
