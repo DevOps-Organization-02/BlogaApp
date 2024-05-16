@@ -5,13 +5,13 @@ FROM node:20-alpine
 WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY frontend/package*.json ./
+COPY client/package.json ./
 
 # Install dependencies
 RUN npm install
 
 # Copy the frontend source code
-COPY frontend .
+COPY client .
 
 # Build the React application
 RUN npm run build
