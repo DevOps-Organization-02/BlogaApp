@@ -1,11 +1,11 @@
 # Use the official MongoDB image from Docker Hub
-FROM mongo:latest
+#FROM mongo:latest
 
 # Expose the MongoDB port
-EXPOSE 27017
+#EXPOSE 27017
 
 # Default command
-CMD ["mongod"]
+#CMD ["mongod"]
 
 # Use the official Node.js image
 FROM node:20-alpine
@@ -14,13 +14,13 @@ FROM node:20-alpine
 WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY backend/package*.json ./
+COPY backend/package.json yarn.lock ./
 
 # Install dependencies
 RUN npm install
 
 # Copy the backend source code
-COPY backend .
+COPY server .
 
 # Expose the backend port
 EXPOSE 5000
