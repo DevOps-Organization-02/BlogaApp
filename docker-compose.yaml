@@ -12,12 +12,12 @@ services:
   backend:
     build:
       context: .
-      dockerfile: client/Dockerfile
+      dockerfile: server/Dockerfile
     container_name: backend
     ports:
       - "5000:5000"
     environment:
-      - MONGO_URI=mongodb://mongo:27017/yourdbname
+      - MONGO_URI=mongodb://mongo:27017/BlogApp
     depends_on:
       - mongo
     networks:
@@ -26,12 +26,12 @@ services:
   frontend:
     build:
       context: .
-      dockerfile: frontend/Dockerfile
+      dockerfile: client/Dockerfile
     container_name: frontend
     ports:
       - "3000:3000"
-    depends_on:
-      - backend
+   # depends_on:
+     # - backend
     networks:
       - mern-network
 
