@@ -8,13 +8,13 @@
 #CMD ["mongod"]
 
 # Use the official Node.js image
-FROM node:20-alpine
+FROM node:14-alpine
 
 # Create and set the working directory
 WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY backend/package.json yarn.lock ./
+COPY server/package*.json ./
 
 # Install dependencies
 RUN npm install
