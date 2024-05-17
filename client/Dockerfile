@@ -24,4 +24,4 @@ EXPOSE 3000
 
 # Command to serve the frontend
 #CMD ["sed"rve", "-s", "buil]
-CMD ["npm" "start"]
+CMD ["npm" , "start"]
